@@ -1,0 +1,3 @@
+frontend/src/*.css
+fronted/node_modules/*
+frontend/build
