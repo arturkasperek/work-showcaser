@@ -1,0 +1,7 @@
+#made for ec2 deployment
+version: '3'
+services:
+  backend:
+    image: kolarz3/work-showcaser-backend
+  frontend:
+    build: kolarz3/work-showcaser-frontend
