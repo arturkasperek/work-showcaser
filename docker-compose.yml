@@ -1,7 +1,25 @@
 #made for ec2 deployment
 version: '3'
 services:
+  gateway:
+    env_file:
+      - .env
+    image: kolarz3/work-showcaser-gateway
+    networks:
+      - front
+    ports:
+      - "8080:80"
   backend:
+    env_file:
+      - .env
     image: kolarz3/work-showcaser-backend
+    networks:
+      - front
   frontend:
-    build: kolarz3/work-showcaser-frontend
+    env_file:
+      - .env
+    image: kolarz3/work-showcaser-frontend
+    networks:
+      - front
+networks:
+  front:
