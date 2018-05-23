@@ -3,3 +3,4 @@ fronted/node_modules/*
 frontend/build
 
 backend/node_modules/*
+.idea
