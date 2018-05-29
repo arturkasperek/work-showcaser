@@ -4,7 +4,8 @@ services:
   gateway:
     env_file:
       - .env
-    context: ./gateway
+    build:
+      context: ./gateway
     networks:
       - front
     ports:
@@ -12,13 +13,15 @@ services:
   backend:
     env_file:
       - .env
-    context: ./backend
+    build:
+      context: ./backend
     networks:
       - front
   frontend:
     env_file:
       - .env
-    context: ./frontend
+    build:
+      context: ./frontend
     networks:
       - front
 networks:
