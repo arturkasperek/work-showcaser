@@ -4,7 +4,7 @@ services:
   gateway:
     env_file:
       - .env
-    image: kolarz3/work-showcaser-gateway
+    image: kolarz3/work-showcaser-gateway:latest
     networks:
       - front
     ports:
@@ -12,13 +12,13 @@ services:
   backend:
     env_file:
       - .env
-    image: kolarz3/work-showcaser-backend
+    image: kolarz3/work-showcaser-backend:latest
     networks:
       - front
   frontend:
     env_file:
       - .env
-    image: kolarz3/work-showcaser-frontend
+    image: kolarz3/work-showcaser-frontend:latest
     networks:
       - front
 networks:
