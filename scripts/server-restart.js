@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
     });
   });
 
-  res.send('Restart in progress');
+  res.send(`Restart in progress, tasks todo: ${tasks.length}`);
 });
 
 const worker = () => {
