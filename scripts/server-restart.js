@@ -4,7 +4,7 @@ const app = express()
 let shellScriptInProgress = false;
 const tasks = [];
 
-app.get('/', (req, res) => {
+app.all('/', (req, res) => {
   //shell.exec('docker-compose pull && docker-compose down && docker-compose up -d --build', {async:true})
   tasks.push(() => {
     shellScriptInProgress = true;
