@@ -1,6 +1,17 @@
 #made for ec2 deployment
 version: '3'
 services:
+  db:
+    restart: always
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+      MYSQL_USER: 'admin'
+      MYSQL_PASS: 'root'
+    volumes:
+      - db-datavolume:/var/lib/mysql
+    networks:
+      - front
   gateway:
     env_file:
       - .env
@@ -26,3 +37,5 @@ services:
       - front
 networks:
   front:
+volumes:
+  db-datavolume:
